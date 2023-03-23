@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi5ec8x1u2wm4"]
+
+[ext_resource type="SpriteFrames" uid="uid://dtr04206dja2m" path="res://player.tres" id="1_8in0x"]
+[ext_resource type="Script" path="res://player.gd" id="1_mqtgr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0y57a"]
+radius = 7.0
+height = 15.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_mqtgr")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.2)
+shape = SubResource("CapsuleShape2D_0y57a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_8in0x")
+animation = &"walk"
